@@ -69,7 +69,7 @@ strengths: time-series modeling, scalable backends, cloud architecture, and stak
 -   **Stack:** Python, Flask/FastAPI, SQLAlchemy, PostgreSQL, Redis, Celery/RQ, AWS S3, SendGrid,
     React, WebSockets, Docker, Render and a [common toolset](#common-toolset)
 
-#### Vaionex Corp, [*vaionex.com*](https://vaionex.com), Remote, Full Stack Developer, Apr 2023 – Jul 2023
+#### Vaionex Corp, [*vaionex.com*](https://vaionex.com), Remote, Full Stack Developer, Apr 2023 – Jul 2024
 -   Contributed to multiple production web platforms with React.js/Next.js frontends and
     Python/Node.js backends; integrated payments and APIs.
 
