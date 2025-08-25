@@ -1,0 +1,222 @@
+define('PROCESSOR')
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{anyfontsize}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.25in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{mathptmx}
+\usepackage{calc}
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+
+\newcommand{\email}{mahernaveed531@gmail.com}
+
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+\setlist[itemize]{noitemsep}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    pdfborder={0 0 0}
+}
+
+% Do NOT move closing curly bracket to the next line: it adds an extra space after the URL
+\newcommand{\chref}[2]{\href{#1}
+{ifelse(PROCESSOR, `pandoc', `#2', `\underline{\smash{#2}}')}}
+\newcommand{\itchref}[2]{\chref{#1}{\textit{#2}}}  % custom \href
+\newcommand{\nesteditemize}[1]{%
+    \vspace{2pt}%
+    \begin{itemize}%
+        \setlength{\itemsep}{2pt}%
+        #1%
+      \end{itemize}%
+    }
+\newcommand{\chrule}{ifelse(PROCESSOR, `pandoc', `', `\vspace{3pt}\hrule')}
+\newcommand{\brokenhreflg}[1]{\textcolor{lightgray}{ifelse(PROCESSOR, `pandoc', `♥#1♥', `#1')}}
+\newcommand{\brokenhrefg}[1]{\textcolor{gray}{ifelse(PROCESSOR, `pandoc', `♥#1♥', `#1')}}
+\newcommand{\cfontsize}[1]{\fontsize{#1}{#1 * 1.2}\selectfont}  % custom \fontsize
+
+\newcommand{\ctextbullet}{
+    ifelse(PROCESSOR, `pandoc', `●', `\textbullet{}')
+}
+\newcommand{\pdbeginitemize}{ifelse(PROCESSOR, `pandoc', `\begin{itemize}', `')}
+\newcommand{\pditem}{ifelse(PROCESSOR, `pandoc', `\item', `')}
+\newcommand{\pdenditemize}{ifelse(PROCESSOR, `pandoc', `\end{itemize}', `')}
+
+\titleformat{\section}{\centering\bfseries\cfontsize{22pt}}{}{0em}{}
+\titlespacing*{\section}{0pt}{0pt}{0.2em}
+
+\titleformat{\subsection}{\bfseries\cfontsize{16pt}}{}{0em}{}[\titlerule]
+
+\titleformat{\subsubsection}{\bfseries\itshape\cfontsize{12pt}}{}{0em}{}
+\titlespacing{\subsubsection}{0pt}{*3}{*1}
+
+\titleformat{\paragraph}{\bfseries\cfontsize{11pt}}{}{0em}{}
+\titlespacing{\paragraph}{0pt}{*2.2}{0.2em}
+
+\begin{document}
+
+\section*{M Naveed Ashraf}
+\begin{center}
+    \cfontsize{18pt} Senior Software Engineer — Full-Stack \ctextbullet{} AI/ML \ctextbullet{} Cloud
+    ifelse(PROCESSOR, `pandoc', `\\\linebreak', `')\\[1pt]
+    \cfontsize{18pt} WhatsApp: \chref{https://wa.me/923471213531}{+92 347 1213531} \; \ctextbullet{} \; Discord: \chref{https://discord.com/users/706767553481015327}{mnaveed.}
+    ifelse(PROCESSOR, `pandoc', `\\\linebreak', `')\\[1pt]
+    \cfontsize{18pt} Email: \chref{mailto:mahernaveed531@gmail.com}{mahernaveed531@gmail.com}
+\end{center}
+
+\begin{center}
+    \medskip
+    \textit{
+        \cfontsize{14pt}4+ years building production web platforms (React, Next.js, Python) with strong cloud (AWS/Azure) and data skills. \\
+        Led an AI time-series forecasting initiative (Pakistan equities): end-to-end architecture, hiring, pipelines, training, and deployment. \\
+        Upwork senior engineer (part-time): blockchain, trading bots, and high-scale backend work.
+    }
+\end{center}
+
+\subsection*{Professional Experience}
+{
+\cfontsize{10pt}
+\mbox{4+} years of software engineering experience across full-stack, data pipelines, and ML systems. Key strengths: time-series modeling, scalable backends, cloud architecture, and stakeholder leadership.
+}
+
+% ---- EXPERIENCE ----
+
+\subsubsection*{Current \& Recent Roles}
+
+\paragraph*{AI Stock Prediction (PSX), \itchref{https://www.zafarstocks.com}{zafarstocks.com}, Pakistan, Partner \& Technical Lead, July 2025 -- now}
+\pdbeginitemize
+\pditem Own end-to-end architecture for a price prediction platform: data acquisition, feature engineering, model training/validation, and low-latency inference.\chrule
+\pditem Built a Python data pipeline to ingest exchange tick data from Oracle and aggregate to OHLCV; standardized calendars, session handling, and corporate action adjustments for modeling.\chrule
+\pditem Hired and lead an ML Engineer and a Data Scientist; run weekly tech/business syncs, translate business goals into measurable modeling targets and SLAs.\chrule
+\pditem Designed training workflow (versioned datasets, repeatable experiments, HPO, backtesting windows, leakage checks) and deployed inference via a stateless API integrated with the backend.\chrule
+\pditem Integrated inference outputs with a web frontend (led a frontend dev) and designed monitoring for drift, hit-rate, and latency. \textbf{Equity share:} 50\% net profit.\chrule
+\pditem \textbf{Stack:} Python, pandas, NumPy, scikit-learn, time-series modeling, FastAPI, joblib, Docker; Oracle (ingest), PostgreSQL; AWS (EC2/S3), GitHub Actions.  and a \hyperlink{common-toolset}{common toolset}
+\pdenditemize
+
+\paragraph*{Upwork (thenewboston \& clients), Senior Software Engineer (Part-time), 2024 -- now}
+\pdbeginitemize
+\pditem Contributed to \textit{thenewboston} (Django + React + PostgreSQL + Celery): feature delivery, performance tuning. (\textasciitilde20 hrs/week)
+\pditem Built and iterated algorithmic trading bots for the platform; experimented with multiple strategies and implemented scheduling, backtesting hooks, and observability.
+\pditem Resolved GitHub issues across blockchain and backend services; raised code quality via reviews, test coverage, and automated checks.\chrule
+\pditem \textbf{Stack:} Python, Django, DRF, Celery, React, PostgreSQL, Redis, Docker, GitHub Actions and a \hyperlink{common-toolset}{common toolset}
+\pdenditemize
+
+\paragraph*{PromptLayer (AI Engineering Platform), \itchref{https://promptlayer.com}{promptlayer.com}, USA, Full Stack Software Engineer, Jun 2024 -- Jul 2025}
+\pdbeginitemize
+\pditem Shipped a scalable large-file ingestion pipeline enabling multi-GB CSV uploads: S3 multipart upload, backend chunk orchestration, Redis queues, and real-time React WebSockets progress UI — eliminated timeouts and made ingestion resilient under load.\chrule
+\pditem Delivered production “Agents / Workflows” feature to automate multi-step tasks; implemented backend orchestration, task state machine, and auditability.\chrule
+\pditem Executed a zero-downtime migration of a hot PostgreSQL table primary key from \texttt{INT} to \texttt{BIGINT} (capacity remaining \textasciitilde10\% and shrinking \textasciitilde1.5\%/day); completed with DBA in 3 days with online backfill and safety gates.\chrule
+\pditem \textbf{Client's feedback:} \textit{"Recognized by the co-founder for exceptional work ethic, strong technical expertise in React/TypeScript and Python Flask, problem-solving ability, and proactive business engagement, highlighted in an official reference letter."}
+\chrule
+\pditem \textbf{Stack:} Python, Flask/FastAPI, SQLAlchemy, PostgreSQL, Redis, Celery/RQ, AWS S3, SendGrid, React, WebSockets, Docker, Render and a \hyperlink{common-toolset}{common toolset}
+\pdenditemize
+
+\paragraph*{Vaionex Corp, \itchref{https://vaionex.com}{vaionex.com}, Remote, Full Stack Developer, Apr 2023 -- Jul 2023}
+\pdbeginitemize
+\pditem Contributed to multiple production web platforms with React.js/Next.js frontends and Python/Node.js backends; integrated payments and APIs.
+\pditem Led design/development of key modules using Next.js + Vercel APIs; optimized transactions with Paysafe (25\% more success rate).
+\pditem Deployed cloud-native services with Firebase and AWS; CI/CD pipelines for rapid iteration.
+\pditem \textbf{Projects Completed:}
+    \nesteditemize{
+        \item \textbf{AI-Forge} \url{https://www.aiforge.org} — Next.js + Supabase + OpenAI; enabled real-time sync, social sharing (30\% higher organic acquisition).
+        \item \textbf{Makeover.ai, PitchAI} \url{https://www.makeover.ai}, \url{https://www.pitchai.com} — Next.js/Node.js based apps with Firebase backends.
+        \item \textbf{Relysia Blockchain Platform} \url{https://www.relysia.com} — Blockchain integrations and APIs.
+    }
+\pdenditemize
+
+\paragraph*{Gaper, \itchref{https://gaper.io}{gaper.io}, Lahore, Pakistan, Associate Software Engineer, Aug 2021 -- Mar 2023}
+\pdbeginitemize
+\pditem Built responsive and user-friendly web applications using React.js and Next.js; improved performance with Redux (30\% faster load times).
+\pditem Implemented GraphQL to optimize data fetching (40\% fewer network calls), and developed REST/GraphQL APIs for complex business logic.
+\pditem Deployed and maintained apps on AWS with Dockerized backends and PostgreSQL/MySQL.
+\pditem \textbf{Projects Completed:}
+    \nesteditemize{
+        \item \textbf{Job Scraper} — Python + Flask scraper to aggregate jobs from LinkedIn/Glassdoor/Indeed with validation for higher data quality.
+        \item \textbf{ATS System} — Internal hiring platform (Next.js, Node.js, Firebase) with LinkedIn login, CV parsing, recruiter dashboards.
+        \item \textbf{Joulea (Client)} \url{https://www.joulea.com} — Energy modeling platform (React + Flask + PostgreSQL, AWS EC2); designed APIs, automated deployments, mentored juniors.
+    }
+\pdenditemize
+
+
+% ---- AI/ML PROJECTS ----
+
+\subsection*{Selected AI/ML Projects}
+\paragraph*{Market Price Forecasting (Pakistan Stock Market) — 2025}
+\pdbeginitemize
+\pditem Problem framing (targets, horizon, evaluation), leakage controls, rolling backtests, feature engineering (OHLCV transforms, calendar/market microstructure features).\chrule
+\pditem Automated training pipeline with hyperparameter tuning; packaged models for inference (API) and integrated with backend + UI for signal delivery.\chrule
+\pditem Added monitoring (latency, drift proxies, hit-rate, alerting) to close the loop post-deployment.
+\pdenditemize
+
+\paragraph*{LLM Agents / Workflows (PromptLayer) — 2024 -- 2025}
+\pdbeginitemize
+\pditem Designed and implemented orchestration for agentic workflows (tool calls, retries, state machine) with full audit logs.\chrule
+\pditem Integrated queues and backpressure to keep throughput stable under spiky loads; exposed progress via WebSockets to frontend.
+\pdenditemize
+
+\paragraph*{Trading Bots (thenewboston) — July 2025 -- now}
+\pdbeginitemize
+\pditem Implemented strategy runners with scheduling, parameterization, and basic backtesting hooks; integrated persistence and metrics.\chrule
+\pditem Built operational tooling (health checks, alerts) and contributed to app features around bots.
+\pdenditemize
+
+% ---- SKILLS ----
+
+\subsection*{Skills}
+\textbf{AI/ML:} Time-series forecasting, feature engineering, model evaluation (backtesting, leakage checks), hyperparameter tuning, inference services, monitoring; LLM agents/workflows.\\
+\textbf{Software Development:} Python (Flask, FastAPI, Django), JavaScript (React, Next.js), REST APIs, WebSockets, Celery/RQ, testing, code review, system design.\\
+\textbf{Cloud \& DevOps:} AWS (EC2, S3, RDS), Azure, Firebase, Docker, GitHub Actions, observability, zero-downtime migrations.\\
+\textbf{Databases \& Data:} PostgreSQL, MySQL, MongoDB, Oracle (ingest), SQL optimization, schema design, migrations, pipelines.\\
+\textbf{Other:} Technical leadership, hiring, stakeholder communication, roadmap scoping, Agile delivery.
+
+% ---- Common Toolset ----
+
+
+\subsection*{\hypertarget{common-toolset}{Common Toolset}}
+pyenv, Poetry, Claude Code, Cursor, pycharm, pytest, Sentry, pre-commit, git, make, shell scripting, WSL (Ubuntu)
+
+% ---- EDUCATION ----
+
+\subsection*{Education}
+\textbf{Bachelor of Science in Information Technology}, University of Agriculture Faisalabad, Pakistan, 2017 -- 2021
+
+
+% ---- LINKS ----
+
+\subsection*{Links}
+\begin{itemize}
+    \setlength{\itemsep}{4pt}
+    \item Upwork profile: \url{https://upwork.com/freelancers/muhammadnaveedashraf531}
+    \item GitHub: \url{https://github.com/m-naveed-ashraf}
+
+    \item Open source code (validate authorship of the most of the lines with \texttt{git blame}):
+        \nesteditemize{
+            \item \url{https://github.com/thenewboston-developers/thenewboston-Backend} (\itchref{https://github.com/m-naveed-ashraf/thenewboston-Backend}{fork})
+            \item \url{https://github.com/thenewboston-developers/thenewboston-Frontend} (\itchref{https://github.com/m-naveed-ashraf/thenewboston-Frontend}{fork})
+            \item \url{https://github.com/thenewboston-developers/Bots} (\itchref{https://github.com/m-naveed-ashraf/thenewboston-bots}{fork})
+            \item \url{https://github.com/MagnivOrg/prompt-layer-library}
+            \item \url{https://github.com/MagnivOrg/prompt-layer-js}
+            \item \url{https://github.com/MagnivOrg/prompt-layer-docs}
+
+        }
+    \item Technical blog (Notable posts):
+        \nesteditemize{
+            \item Building a Scalable Asynchronous File Upload System: From Concept to Code: \url{https://medium.com/@mahernaveed531/building-a-scalable-asynchronous-file-upload-system-from-concept-to-code-2c69aade351d}
+            \item How to Use Common Table Expressions (CTEs) to Avoid N+1 Queries in Hierarchical Data:\\
+            \url{https://dev.to/naveed/how-to-use-common-table-expressions-ctes-to-avoid-n1-queries-in-hierarchical-data-95k}
+        }
+    \item WhatsApp: \chref{https://wa.me/923471213531}{+92 347 1213531}
+    \item Discord: \texttt{mnaveed.}
+    \item LinkedIn: \url{https://linkedin.com/in/m-naveed-ashraf}
+    \item Email: \url{mailto:mahernaveed531@gmail.com}
+\end{itemize}
+
+\end{document}
