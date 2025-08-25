@@ -6,10 +6,10 @@ WhatsApp: [+92 347 1213531](https://wa.me/923471213531) ● Discord:
 
 Email: <mahernaveed531@gmail.com>
 
-*+ years building production web platforms (React, Next.js, Python) with strong cloud (AWS/Azure)
-and data skills.
-Led an AI time-series forecasting initiative (Pakistan equities): end-to-end architecture, hiring,
-pipelines, training, and deployment.
+*Having 4+ years of experience building production web platforms (React, Next.js, Python) with
+strong cloud (AWS/Azure) and data skills.
+Led an AI time-series forecasting initiative (PSX): end-to-end architecture, hiring, pipelines,
+training, and deployment.
 Upwork senior engineer (part-time): blockchain, trading bots, and high-scale backend work.*
 
 ## Professional Experience
